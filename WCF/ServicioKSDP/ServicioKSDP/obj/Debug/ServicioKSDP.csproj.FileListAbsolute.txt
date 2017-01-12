@@ -1,0 +1,6 @@
+c:\users\rrorro\documents\visual studio 2013\Projects\ServicioKSDP\ServicioKSDP\bin\ServicioKSDP.dll.config
+c:\users\rrorro\documents\visual studio 2013\Projects\ServicioKSDP\ServicioKSDP\bin\ServicioKSDP.dll
+c:\users\rrorro\documents\visual studio 2013\Projects\ServicioKSDP\ServicioKSDP\bin\ServicioKSDP.pdb
+c:\users\rrorro\documents\visual studio 2013\Projects\ServicioKSDP\ServicioKSDP\obj\Debug\ServicioKSDP.dll
+c:\users\rrorro\documents\visual studio 2013\Projects\ServicioKSDP\ServicioKSDP\obj\Debug\ServicioKSDP.pdb
+c:\users\rrorro\documents\visual studio 2013\Projects\ServicioKSDP\ServicioKSDP\obj\Debug\ServicioKSDP.csprojResolveAssemblyReference.cache

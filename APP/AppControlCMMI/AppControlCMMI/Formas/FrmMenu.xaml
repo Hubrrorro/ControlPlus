@@ -1,0 +1,27 @@
+﻿<Window x:Class="AppControlCMMI.Formas.FrmMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppControlCMMI.Formas"
+        mc:Ignorable="d"
+        Title="Menu" Closed="Window_Closed" >
+    <Grid>
+        <Grid VerticalAlignment="Top" Height="50" Width="600" HorizontalAlignment="Center"  />
+        <Grid>
+            <Menu x:Name="Menu" FontSize="16" FontFamily="Segoe WP Black" >
+                <MenuItem Header="Configuración">
+                    <MenuItem Header="SVN">
+                        <MenuItem x:Name="AltaSVN" Header="Alta Usuario" Click="AltaSVN_Click" ></MenuItem>
+                        <MenuItem x:Name="SVNTicket" Header="Configura SVN Ticket" Click="SVNTicket_Click"></MenuItem>
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Header="Inicio">
+                    <MenuItem Header="Ticket">
+                        <MenuItem Header="Alta" Click="MenuItem_Click"></MenuItem>
+                    </MenuItem>
+                </MenuItem>
+            </Menu>
+        </Grid>
+    </Grid>
+</Window>

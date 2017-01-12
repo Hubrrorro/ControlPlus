@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:2737/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:2737/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:2737/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ServicioKSDP" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService1_ObtenerUsuarioSVN_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerUsuarioSVN" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ObtenerUsuarioSVN_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerUsuarioSVNResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AgregarUsuarioSVN_InputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarUsuarioSVN" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AgregarUsuarioSVN_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarUsuarioSVNResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Acceso_InputMessage">
+    <wsdl:part name="parameters" element="tns:Acceso" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Acceso_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AccesoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Menu_InputMessage">
+    <wsdl:part name="parameters" element="tns:Menu" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Menu_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MenuResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AgregaTicket_InputMessage">
+    <wsdl:part name="parameters" element="tns:AgregaTicket" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AgregaTicket_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AgregaTicketResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetEmpresa_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmpresa" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetEmpresa_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmpresaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetTipo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTipo" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetTipo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTipoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetSistema_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSistema" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetSistema_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSistemaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetSistemaByEmpresa_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSistemaByEmpresa" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetSistemaByEmpresa_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSistemaByEmpresaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetLiderKrio_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLiderKrio" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetLiderKrio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLiderKrioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetPMOKrio_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPMOKrio" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetPMOKrio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPMOKrioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetEnlace_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEnlace" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetEnlace_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEnlaceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetDesarrolladorKrio_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDesarrolladorKrio" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetDesarrolladorKrio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDesarrolladorKrioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetPPQAKrio_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPPQAKrio" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetPPQAKrio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPPQAKrioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAdminConfKrio_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAdminConfKrio" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAdminConfKrio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAdminConfKrioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllUsuariosPuesto_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUsuariosPuesto" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllUsuariosPuesto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUsuariosPuestoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllUsuariosAnexos_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUsuariosAnexos" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllUsuariosAnexos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUsuariosAnexosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Reporte_InputMessage">
+    <wsdl:part name="parameters" element="tns:Reporte" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Reporte_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReporteResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService1">
+    <wsdl:operation name="ObtenerUsuarioSVN">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ObtenerUsuarioSVN" message="tns:IService1_ObtenerUsuarioSVN_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ObtenerUsuarioSVNResponse" message="tns:IService1_ObtenerUsuarioSVN_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarUsuarioSVN">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AgregarUsuarioSVN" message="tns:IService1_AgregarUsuarioSVN_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AgregarUsuarioSVNResponse" message="tns:IService1_AgregarUsuarioSVN_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Acceso">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Acceso" message="tns:IService1_Acceso_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AccesoResponse" message="tns:IService1_Acceso_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Menu">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Menu" message="tns:IService1_Menu_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/MenuResponse" message="tns:IService1_Menu_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregaTicket">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AgregaTicket" message="tns:IService1_AgregaTicket_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AgregaTicketResponse" message="tns:IService1_AgregaTicket_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmpresa">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetEmpresa" message="tns:IService1_GetEmpresa_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetEmpresaResponse" message="tns:IService1_GetEmpresa_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTipo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetTipo" message="tns:IService1_GetTipo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetTipoResponse" message="tns:IService1_GetTipo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSistema">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetSistema" message="tns:IService1_GetSistema_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetSistemaResponse" message="tns:IService1_GetSistema_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSistemaByEmpresa">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetSistemaByEmpresa" message="tns:IService1_GetSistemaByEmpresa_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetSistemaByEmpresaResponse" message="tns:IService1_GetSistemaByEmpresa_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLiderKrio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetLiderKrio" message="tns:IService1_GetLiderKrio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetLiderKrioResponse" message="tns:IService1_GetLiderKrio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPMOKrio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetPMOKrio" message="tns:IService1_GetPMOKrio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetPMOKrioResponse" message="tns:IService1_GetPMOKrio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEnlace">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetEnlace" message="tns:IService1_GetEnlace_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetEnlaceResponse" message="tns:IService1_GetEnlace_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDesarrolladorKrio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetDesarrolladorKrio" message="tns:IService1_GetDesarrolladorKrio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDesarrolladorKrioResponse" message="tns:IService1_GetDesarrolladorKrio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPPQAKrio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetPPQAKrio" message="tns:IService1_GetPPQAKrio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetPPQAKrioResponse" message="tns:IService1_GetPPQAKrio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAdminConfKrio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAdminConfKrio" message="tns:IService1_GetAdminConfKrio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAdminConfKrioResponse" message="tns:IService1_GetAdminConfKrio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUsuariosPuesto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAllUsuariosPuesto" message="tns:IService1_GetAllUsuariosPuesto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAllUsuariosPuestoResponse" message="tns:IService1_GetAllUsuariosPuesto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUsuariosAnexos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAllUsuariosAnexos" message="tns:IService1_GetAllUsuariosAnexos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAllUsuariosAnexosResponse" message="tns:IService1_GetAllUsuariosAnexos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Reporte">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Reporte" message="tns:IService1_Reporte_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ReporteResponse" message="tns:IService1_Reporte_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ObtenerUsuarioSVN">
+      <soap:operation soapAction="http://tempuri.org/IService1/ObtenerUsuarioSVN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarUsuarioSVN">
+      <soap:operation soapAction="http://tempuri.org/IService1/AgregarUsuarioSVN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Acceso">
+      <soap:operation soapAction="http://tempuri.org/IService1/Acceso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Menu">
+      <soap:operation soapAction="http://tempuri.org/IService1/Menu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregaTicket">
+      <soap:operation soapAction="http://tempuri.org/IService1/AgregaTicket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmpresa">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetEmpresa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTipo">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetTipo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSistema">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetSistema" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSistemaByEmpresa">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetSistemaByEmpresa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLiderKrio">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetLiderKrio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPMOKrio">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetPMOKrio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEnlace">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetEnlace" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDesarrolladorKrio">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetDesarrolladorKrio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPPQAKrio">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetPPQAKrio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAdminConfKrio">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetAdminConfKrio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUsuariosPuesto">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetAllUsuariosPuesto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUsuariosAnexos">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetAllUsuariosAnexos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Reporte">
+      <soap:operation soapAction="http://tempuri.org/IService1/Reporte" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">
+      <soap:address location="http://localhost:2737/Service1.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
