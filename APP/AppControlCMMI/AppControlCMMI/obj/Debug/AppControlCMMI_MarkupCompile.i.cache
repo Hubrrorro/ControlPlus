@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-c:\users\rrorro\documents\visual studio 2015\Projects\AppControlCMMI\AppControlCMMI\obj\Debug\
+C:\Users\RroRro\Documents\GitHub\ControlPlus\APP\AppControlCMMI\AppControlCMMI\obj\Debug\
 AppControlCMMI
 none
 false
 DEBUG;TRACE
-c:\users\rrorro\documents\visual studio 2015\Projects\AppControlCMMI\AppControlCMMI\App.xaml
+C:\Users\RroRro\Documents\GitHub\ControlPlus\APP\AppControlCMMI\AppControlCMMI\App.xaml
 51016549120
 
 15-619596197
-151560689069
+17-2040493972
 Formas\Configuracion\AltaSVN.xaml;Formas\Configuracion\SVNTicket.xaml;Formas\Inicio\FrmAltaTicket.xaml;Formas\FrmMenu.xaml;MainWindow.xaml;
 
-False
+True
 

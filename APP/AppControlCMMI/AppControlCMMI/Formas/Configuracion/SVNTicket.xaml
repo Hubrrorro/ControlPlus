@@ -7,19 +7,36 @@
         mc:Ignorable="d"
         Title="SVNTicket" Height="400" Width="500">
     <Grid>
-        <Grid x:Name="BusquedaGrid">
+        <Grid x:Name="BusquedaGrid" >
             <GroupBox x:Name="groupBox" Header="Buscar Ticket" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="112" Width="472">
                 <Grid>
                     <TextBox x:Name="txtnombre" HorizontalAlignment="Left" Height="23" Margin="169,36,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="151"/>
                     <TextBox x:Name="txtticket" HorizontalAlignment="Left" Height="23" Margin="8,36,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="151"/>
                     <ComboBox x:Name="ddlSistema" HorizontalAlignment="Left" Margin="325,36,0,0" VerticalAlignment="Top" Width="129"/>
-                    <Button  x:Name="btnbuscar" HorizontalAlignment="Left" Margin="377,70,0,0" VerticalAlignment="Top" Width="77" Content="Buscar" Click="btnbuscar_Click"/>
+                    <Button  x:Name="btnbuscar" HorizontalAlignment="Left" Margin="377,70,0,1" Width="77" Content="Buscar" Click="btnbuscar_Click"/>
                 </Grid>
             </GroupBox>
-            <DataGrid x:Name="dgTicket" HorizontalAlignment="Left" Margin="14,131,0,0" VerticalAlignment="Top" Height="191" Width="468" >
-                
+            <DataGrid x:Name="dgTicket" HorizontalAlignment="Left" Margin="14,131,0,0" VerticalAlignment="Top" Height="191" Width="468" SelectionChanged="dgTicket_SelectionChanged"  >
+                <DataGrid.Resources>
+                    <Style TargetType="DataGridRow">
+                        <EventSetter Event="MouseDoubleClick" Handler="Row_DoubleClick"/>
+                    </Style>
+                </DataGrid.Resources>
             </DataGrid>
 
+        </Grid>
+        <Grid x:Name="AsignaGrid"  Visibility="Hidden">
+            <GroupBox x:Name="groupBox1" Header="Ingresa tu direccion" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="306" Width="472">
+                <Grid >
+                    <Label x:Name="lblticket" Content="Label" HorizontalAlignment="Left" Margin="119,10,0,0" VerticalAlignment="Top" Width="144"/>
+                    <Label x:Name="lblnombre" Content="Label" HorizontalAlignment="Left" Margin="119,41,0,0" VerticalAlignment="Top" Width="144"/>
+                    <Label x:Name="lblsistema" Content="Label" HorizontalAlignment="Left" Margin="119,72,0,0" VerticalAlignment="Top" Width="144"/>
+                    <TextBox x:Name="txtdireccion" HorizontalAlignment="Left" Height="23" Margin="119,114,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="302"/>
+                    <Label x:Name="lblid" Content="" HorizontalAlignment="Left" Margin="119,10,0,0" VerticalAlignment="Top" Width="144" Visibility="Hidden"/>
+                    <Button Content="Agrega Direccion" HorizontalAlignment="Left" Margin="332,225,0,0" VerticalAlignment="Top" Width="132" Height="47" Click="Button_Click"/>
+                </Grid>
+            </GroupBox>
+           
         </Grid>
     </Grid>
 </Window>

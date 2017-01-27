@@ -1,1 +1,2 @@
 c:\users\rrorro\documents\visual studio 2013\Projects\ControlKSDP\ControlKSDP\bin\Debug\ControlKSDP.exe.config
+C:\Users\RroRro\Documents\GitHub\ControlPlus\WCF\ControlKSDP\ControlKSDP\bin\Debug\ControlKSDP.exe.config

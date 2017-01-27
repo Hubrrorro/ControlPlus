@@ -20,3 +20,30 @@ c:\users\rrorro\documents\visual studio 2015\Projects\AppControlCMMI\AppControlC
 c:\users\rrorro\documents\visual studio 2015\Projects\AppControlCMMI\AppControlCMMI\obj\Debug\Formas\Configuracion\AltaSVN.baml
 c:\users\rrorro\documents\visual studio 2015\Projects\AppControlCMMI\AppControlCMMI\obj\Debug\Formas\Configuracion\SVNTicket.g.cs
 c:\users\rrorro\documents\visual studio 2015\Projects\AppControlCMMI\AppControlCMMI\obj\Debug\Formas\Configuracion\SVNTicket.baml
+C:\Users\RroRro\Documents\GitHub\ControlPlus\APP\AppControlCMMI\AppControlCMMI\bin\Debug\AppControlCMMI.exe.config
+C:\Users\RroRro\Documents\GitHub\ControlPlus\APP\AppControlCMMI\AppControlCMMI\obj\Debug\AppControlCMMI.exe
+C:\Users\RroRro\Documents\GitHub\ControlPlus\APP\AppControlCMMI\AppControlCMMI\obj\Debug\AppControlCMMI.pdb
+C:\Users\RroRro\Documents\GitHub\ControlPlus\APP\AppControlCMMI\AppControlCMMI\obj\Debug\AppControlCMMI.csprojResolveAssemblyReference.cache
+C:\Users\RroRro\Documents\GitHub\ControlPlus\APP\AppControlCMMI\AppControlCMMI\obj\Debug\Formas\Configuracion\AltaSVN.g.cs
+C:\Users\RroRro\Documents\GitHub\ControlPlus\APP\AppControlCMMI\AppControlCMMI\obj\Debug\Formas\Inicio\FrmAltaTicket.g.cs
+C:\Users\RroRro\Documents\GitHub\ControlPlus\APP\AppControlCMMI\AppControlCMMI\obj\Debug\Formas\FrmMenu.g.cs
+C:\Users\RroRro\Documents\GitHub\ControlPlus\APP\AppControlCMMI\AppControlCMMI\obj\Debug\MainWindow.g.cs
+C:\Users\RroRro\Documents\GitHub\ControlPlus\APP\AppControlCMMI\AppControlCMMI\obj\Debug\App.g.cs
+C:\Users\RroRro\Documents\GitHub\ControlPlus\APP\AppControlCMMI\AppControlCMMI\obj\Debug\AppControlCMMI_MarkupCompile.cache
+C:\Users\RroRro\Documents\GitHub\ControlPlus\APP\AppControlCMMI\AppControlCMMI\obj\Debug\AppControlCMMI_MarkupCompile.lref
+C:\Users\RroRro\Documents\GitHub\ControlPlus\APP\AppControlCMMI\AppControlCMMI\bin\Debug\AppControlCMMI.exe
+C:\Users\RroRro\Documents\GitHub\ControlPlus\APP\AppControlCMMI\AppControlCMMI\bin\Debug\AppControlCMMI.pdb
+C:\Users\RroRro\Documents\GitHub\ControlPlus\APP\AppControlCMMI\AppControlCMMI\obj\Debug\Formas\Configuracion\SVNTicket.g.cs
+C:\Users\RroRro\Documents\GitHub\ControlPlus\APP\AppControlCMMI\AppControlCMMI\obj\Debug\Formas\Configuracion\AltaSVN.baml
+C:\Users\RroRro\Documents\GitHub\ControlPlus\APP\AppControlCMMI\AppControlCMMI\obj\Debug\Formas\Configuracion\SVNTicket.baml
+C:\Users\RroRro\Documents\GitHub\ControlPlus\APP\AppControlCMMI\AppControlCMMI\obj\Debug\Formas\Inicio\FrmAltaTicket.baml
+C:\Users\RroRro\Documents\GitHub\ControlPlus\APP\AppControlCMMI\AppControlCMMI\obj\Debug\Formas\FrmMenu.baml
+C:\Users\RroRro\Documents\GitHub\ControlPlus\APP\AppControlCMMI\AppControlCMMI\obj\Debug\MainWindow.baml
+C:\Users\RroRro\Documents\GitHub\ControlPlus\APP\AppControlCMMI\AppControlCMMI\obj\Debug\AppControlCMMI.g.resources
+C:\Users\RroRro\Documents\GitHub\ControlPlus\APP\AppControlCMMI\AppControlCMMI\obj\Debug\AppControlCMMI.Properties.Resources.resources
+C:\Users\RroRro\Documents\GitHub\ControlPlus\APP\AppControlCMMI\AppControlCMMI\obj\Debug\AppControlCMMI.csproj.GenerateResource.Cache
+C:\Users\RroRro\Documents\GitHub\ControlPlus\APP\AppControlCMMI\AppControlCMMI\bin\Debug\SharpSvn.dll
+C:\Users\RroRro\Documents\GitHub\ControlPlus\APP\AppControlCMMI\AppControlCMMI\bin\Debug\SharpSvn.UI.dll
+C:\Users\RroRro\Documents\GitHub\ControlPlus\APP\AppControlCMMI\AppControlCMMI\bin\Debug\SharpSvn.xml
+C:\Users\RroRro\Documents\GitHub\ControlPlus\APP\AppControlCMMI\AppControlCMMI\bin\Debug\SharpSvn.UI.xml
+C:\Users\RroRro\Documents\GitHub\ControlPlus\APP\AppControlCMMI\AppControlCMMI\bin\Debug\SharpPlink-Win32.svnExe

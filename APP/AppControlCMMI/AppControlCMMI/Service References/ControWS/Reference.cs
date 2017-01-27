@@ -984,6 +984,12 @@ namespace AppControlCMMI.ControWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Reporte", ReplyAction="http://tempuri.org/IService1/ReporteResponse")]
         System.Threading.Tasks.Task<AppControlCMMI.ControWS.DataRepTicket[]> ReporteAsync(string Nombre, string Ticket, int Sistema, int idEmpleado, string key);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AgregarDireccionSNV", ReplyAction="http://tempuri.org/IService1/AgregarDireccionSNVResponse")]
+        void AgregarDireccionSNV(int idTicket, int idUsuario, int idSVN, string Ruta, string URL);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AgregarDireccionSNV", ReplyAction="http://tempuri.org/IService1/AgregarDireccionSNVResponse")]
+        System.Threading.Tasks.Task AgregarDireccionSNVAsync(int idTicket, int idUsuario, int idSVN, string Ruta, string URL);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1210,6 +1216,14 @@ namespace AppControlCMMI.ControWS {
         
         public System.Threading.Tasks.Task<AppControlCMMI.ControWS.DataRepTicket[]> ReporteAsync(string Nombre, string Ticket, int Sistema, int idEmpleado, string key) {
             return base.Channel.ReporteAsync(Nombre, Ticket, Sistema, idEmpleado, key);
+        }
+        
+        public void AgregarDireccionSNV(int idTicket, int idUsuario, int idSVN, string Ruta, string URL) {
+            base.Channel.AgregarDireccionSNV(idTicket, idUsuario, idSVN, Ruta, URL);
+        }
+        
+        public System.Threading.Tasks.Task AgregarDireccionSNVAsync(int idTicket, int idUsuario, int idSVN, string Ruta, string URL) {
+            return base.Channel.AgregarDireccionSNVAsync(idTicket, idUsuario, idSVN, Ruta, URL);
         }
     }
 }

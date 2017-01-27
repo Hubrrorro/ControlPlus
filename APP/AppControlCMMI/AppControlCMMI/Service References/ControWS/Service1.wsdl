@@ -115,6 +115,12 @@
   <wsdl:message name="IService1_Reporte_OutputMessage">
     <wsdl:part name="parameters" element="tns:ReporteResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_AgregarDireccionSNV_InputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarDireccionSNV" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AgregarDireccionSNV_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarDireccionSNVResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="ObtenerUsuarioSVN">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/ObtenerUsuarioSVN" message="tns:IService1_ObtenerUsuarioSVN_InputMessage" />
@@ -187,6 +193,10 @@
     <wsdl:operation name="Reporte">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Reporte" message="tns:IService1_Reporte_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/ReporteResponse" message="tns:IService1_Reporte_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarDireccionSNV">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AgregarDireccionSNV" message="tns:IService1_AgregarDireccionSNV_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AgregarDireccionSNVResponse" message="tns:IService1_AgregarDireccionSNV_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -346,6 +356,15 @@
     </wsdl:operation>
     <wsdl:operation name="Reporte">
       <soap:operation soapAction="http://tempuri.org/IService1/Reporte" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarDireccionSNV">
+      <soap:operation soapAction="http://tempuri.org/IService1/AgregarDireccionSNV" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

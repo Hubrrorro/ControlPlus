@@ -10,6 +10,113 @@ namespace ServicioKSDP.Class.ticket
 {
     public class TicketCS
     {
+        public bool ExisteCuentaSVN( int idUsuario)
+        {
+            bool Existe = false;
+            Conexion Conex = new Conexion();
+            try
+            {
+                SqlConnection SqlCon = Conex.CreaConex();
+                using (SqlCon)
+                {
+                    string qry = "select count(*) from Cat_SVN where idUsuario = @Usuario";
+                    using (SqlCommand Comm = new SqlCommand(qry, SqlCon))
+                    {
+                        Comm.Parameters.Add(new SqlParameter("@Usuario", idUsuario));
+                        Comm.CommandType = System.Data.CommandType.Text;
+                        SqlCon.Open();
+                        SqlDataReader reader = Comm.ExecuteReader();
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                int Result = reader.GetInt32(0);
+                                if (!Result.Equals(0))
+                                    Existe = true;
+                            }
+                        }
+                    }
+                }
+            }
+            catch
+            {
+
+            }
+            return Existe;
+ 
+        }
+        public bool ExisteURLSVN(int idUsuario,int idTicket)
+        {
+            bool Existe = false;
+            Conexion Conex = new Conexion();
+            try
+            {
+                SqlConnection SqlCon = Conex.CreaConex();
+                using (SqlCon)
+                {
+                    string qry = "select count(*) from Cat_SVNLocal  where idUsuario = @Usuario and idTicket=@idTicket;";
+                    using (SqlCommand Comm = new SqlCommand(qry, SqlCon))
+                    {
+                        Comm.Parameters.Add(new SqlParameter("@Usuario", idUsuario));
+                        Comm.Parameters.Add(new SqlParameter("@idTicket", idTicket));
+                        Comm.CommandType = System.Data.CommandType.Text;
+                        SqlCon.Open();
+                        Comm.ExecuteNonQuery();
+                        
+                    }
+                }
+            }
+            catch
+            {
+
+            }
+            return Existe;
+
+        }
+        public bool AgregarURLSVN(int idTicket,int idUsuario,int idSVN, string URL, string RutaLocal)
+        {
+            bool esCorrecto = false;
+            Conexion Conex = new Conexion();
+            try
+            {
+                SqlConnection SqlCon = Conex.CreaConex();
+                using (SqlCon)
+                {
+                    string qry;
+                    if (!ExisteURLSVN(idUsuario,idTicket))
+                    {
+                        qry = "insert into Cat_SVNLocal (idUsuario, idTicket,idSVN,RutaLocal,RutaSVN)";
+                        qry += " values(@idUsuario, @idTicket, @idSVN, @RutaLocal, @RutaSVN);";
+                       
+
+                    }
+                    else
+                    {
+                        qry = "update TblTicket set ";
+                        qry += " RutaSVN =@RutaSVN ";
+                        qry += " where IDTicket = @Ticket and idUsuario = @Usuario";
+                    }
+                    using (SqlCommand Comm = new SqlCommand(qry, SqlCon))
+                    {
+                        Comm.Parameters.Add(new SqlParameter("@Usuario", idUsuario));
+                        Comm.Parameters.Add(new SqlParameter("@idTicket", idTicket));
+                        Comm.Parameters.Add(new SqlParameter("@RutaSVN", URL));
+                        Comm.Parameters.Add(new SqlParameter("@RutaLocal", RutaLocal));
+                        Comm.Parameters.Add(new SqlParameter("@idSVN", idSVN));
+                        Comm.CommandType = System.Data.CommandType.Text;
+                        SqlCon.Open();
+                        Comm.ExecuteNonQuery();
+                        esCorrecto = true;
+                    }
+                }
+            }
+            catch
+            {
+
+            }
+            return esCorrecto;
+ 
+        }
         public void ActualizaSubEtapa(int idSubEtapa, int IdTicket)
         {
             Conexion Conex = new Conexion();

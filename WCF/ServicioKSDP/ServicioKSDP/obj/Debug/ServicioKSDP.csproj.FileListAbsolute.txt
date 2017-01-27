@@ -4,3 +4,9 @@ c:\users\rrorro\documents\visual studio 2013\Projects\ServicioKSDP\ServicioKSDP\
 c:\users\rrorro\documents\visual studio 2013\Projects\ServicioKSDP\ServicioKSDP\obj\Debug\ServicioKSDP.dll
 c:\users\rrorro\documents\visual studio 2013\Projects\ServicioKSDP\ServicioKSDP\obj\Debug\ServicioKSDP.pdb
 c:\users\rrorro\documents\visual studio 2013\Projects\ServicioKSDP\ServicioKSDP\obj\Debug\ServicioKSDP.csprojResolveAssemblyReference.cache
+C:\Users\RroRro\Documents\GitHub\ControlPlus\WCF\ServicioKSDP\ServicioKSDP\bin\ServicioKSDP.dll.config
+C:\Users\RroRro\Documents\GitHub\ControlPlus\WCF\ServicioKSDP\ServicioKSDP\bin\ServicioKSDP.dll
+C:\Users\RroRro\Documents\GitHub\ControlPlus\WCF\ServicioKSDP\ServicioKSDP\bin\ServicioKSDP.pdb
+C:\Users\RroRro\Documents\GitHub\ControlPlus\WCF\ServicioKSDP\ServicioKSDP\obj\Debug\ServicioKSDP.csprojResolveAssemblyReference.cache
+C:\Users\RroRro\Documents\GitHub\ControlPlus\WCF\ServicioKSDP\ServicioKSDP\obj\Debug\ServicioKSDP.dll
+C:\Users\RroRro\Documents\GitHub\ControlPlus\WCF\ServicioKSDP\ServicioKSDP\obj\Debug\ServicioKSDP.pdb

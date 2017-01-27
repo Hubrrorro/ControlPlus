@@ -15,6 +15,11 @@ namespace ServicioKSDP
     // NOTE: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione Service1.svc o Service1.svc.cs en el Explorador de soluciones e inicie la depuración.
     public class Service1 : IService1
     {
+        public void AgregarDireccionSNV(int idTicket,int idUsuario, int idSVN,string Ruta, string URL)
+        {
+            TicketCS ticket = new TicketCS();
+            ticket.AgregarURLSVN(idTicket, idUsuario, idSVN, URL, Ruta);
+        }
         public List<DataRepTicket> Reporte(string Nombre, string Ticket, int Sistema, int idEmpleado, string key)
         {
             List<DataRepTicket> listado;
