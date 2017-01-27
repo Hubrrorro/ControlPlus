@@ -9,7 +9,6 @@
     <Grid>
         <TextBox x:Name="txtUsuario" HorizontalAlignment="Left" Height="23" Margin="77,30,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="200"/>
         <TextBox x:Name="txtcontra" HorizontalAlignment="Left" Height="23" Margin="77,71,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="200"/>
-        <TextBox x:Name="txtURL" HorizontalAlignment="Left" Height="23" Margin="77,110,0,0" TextWrapping="Wrap" Text="NADA" Visibility="Hidden" VerticalAlignment="Top" Width="200"/>
         <Button x:Name="btnGuardar" Content="Guardar" HorizontalAlignment="Left" Margin="193,224,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.041,1.07" Click="button_Click"/>
         <Button x:Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="33,224,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.041,1.07" Click="btnCancelar_Click"/>
 

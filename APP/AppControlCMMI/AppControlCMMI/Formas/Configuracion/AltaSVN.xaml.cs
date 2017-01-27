@@ -33,12 +33,11 @@ namespace AppControlCMMI.Formas.Configuracion
             {
                 txtcontra.Text = uSVN.Contraseña;
                 txtUsuario.Text = uSVN.Nombre;
-                txtURL.Text = uSVN.URL;
             }
         }
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            if ((String.IsNullOrEmpty(txtcontra.Text)) || (String.IsNullOrEmpty(txtURL.Text)) || (String.IsNullOrEmpty(txtUsuario.Text)))
+            if ((String.IsNullOrEmpty(txtcontra.Text)) || (String.IsNullOrEmpty(txtUsuario.Text)))
             {
                 MessageBox.Show("Falta llenar campos", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
@@ -47,7 +46,6 @@ namespace AppControlCMMI.Formas.Configuracion
             UsuarioSVN uSVN = new UsuarioSVN();
             uSVN.idUsuario = UsuFirmado.IdEmpleado;
             uSVN.Nombre = txtUsuario.Text;
-            uSVN.URL = txtURL.Text;
             uSVN.Contraseña = txtcontra.Text;
             Service1Client Cliente = new Service1Client();
             bool Respuesta = Cliente.AgregarUsuarioSVN(uSVN, Seguridad.Seguridad.saltkey);

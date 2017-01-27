@@ -60,8 +60,16 @@ namespace AppControlCMMI.Formas.Configuracion
             lblsistema.Content = contex.Sistema;
             lblticket.Content = contex.Ticket;
             lblid.Content = contex.idTicket;
-            
+            UsuarioFirmado UsuFirmado = (UsuarioFirmado)Application.Current.Resources["UserFirmado"];
+            BuscarInformacion(contex.idTicket, UsuFirmado.IdEmpleado);
             // Some operations with this row
+        }
+        protected void BuscarInformacion(int idTicket, int idUsuario)
+        {
+            Service1Client Cliente = new Service1Client();
+            UsuarioSVN usuSVN= Cliente.GetRuta(idTicket, idUsuario, Seguridad.Seguridad.saltkey);
+            txtdireccion.Text = usuSVN.URL;
+            lblrutaLocal.Content = usuSVN.RutaLocal;
         }
         private void dgTicket_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -77,49 +85,24 @@ namespace AppControlCMMI.Formas.Configuracion
             }
             return Ruta;
         }
-        private void ConnectSVN(string path,string URL)
+        private void ConnectSVN(UsuarioSVN usuSVN) 
         {
-            //SvnUpdateResult provides info about what happened during a checkout
-            SvnUpdateResult result;
-
-            //we will use this to tell CheckOut() which revision to fetch
-            //long revision;
-
-            //SvnCheckoutArgs wraps all of the options for the 'svn checkout' function
-            SvnCheckOutArgs args = new SvnCheckOutArgs();
-
-
-            //if (long.TryParse(tbRevision.Text, out revision))
-            //{
-            //    //set the revision number if the user entered a valid number
-            //    args.Revision = new SvnRevision(revision);
-            //}
-            //if args.Revision is not set, it defaults to fetch the HEAD revision.
-            //else MessageBox.Show("Invalid Revision number, defaulting to HEAD");
-
-            //the using statement is necessary to ensure we are freeing up resources
-            using (SvnClient client = new SvnClient())
+            AppControlCMMI.ControWS.Service1Client Cliente = new Service1Client();
+            UsuarioSVN usuSVN2 = usuSVN;
+            if (usuSVN.RutaLocal == null)
             {
-                try
-                {
-                    client.Authentication.ForceCredentials("eduardo.jimenez", "P4ssw0rd210");
-                    //SvnUriTarget is a wrapper class for SVN repository URIs
-                    SvnUriTarget target = new SvnUriTarget(URL);
-                   
-                    //this is the where 'svn checkout' actually happens.
-                    if (client.CheckOut(target, path, args, out result))
-                        MessageBox.Show("Successfully checked out revision " + result.Revision + ".");
-                }
-                catch (SvnException se)
-                {
-                    MessageBox.Show(se.Message,"svn checkout error");
-                }
-                catch (UriFormatException ufe)
-                {
-                    MessageBox.Show(ufe.Message);
-                }
+                usuSVN = Cliente.ObtenerUsuarioSVN(usuSVN.idUsuario, Seguridad.Seguridad.saltkey);
+                usuSVN.URL = usuSVN2.URL;
+                usuSVN.RutaLocal = usuSVN2.RutaLocal;
             }
+            AppControlCMMI.SVN.CSVN _svn = new SVN.CSVN();
+            bool correcto = _svn.checkedOut(usuSVN);
+            if (!correcto)
+                MessageBox.Show("Error al realizar enlace con SVN");
+            else
+                MessageBox.Show("Asignación correcta");
         }
+        
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             if (String.IsNullOrEmpty(txtdireccion.Text))
@@ -127,11 +110,32 @@ namespace AppControlCMMI.Formas.Configuracion
                 MessageBox.Show("Debes ingresar la direccion URL");
                 return;
             }
+            if (String.IsNullOrEmpty(lblrutaLocal.Content.ToString()))
+            {
+                MessageBox.Show("Debes seleccionar donde se guardara la información");
+                return;
+            }
             AppControlCMMI.ControWS.Service1Client Cliente = new Service1Client();
             UsuarioFirmado UsuFirmado = (UsuarioFirmado)Application.Current.Resources["UserFirmado"];
             int idTicket = int.Parse(lblid.Content.ToString());
-            string Ruta = createCarpeta(idTicket);
-            ConnectSVN(Ruta, txtdireccion.Text);
+            UsuarioSVN usuSVN = new UsuarioSVN();
+            usuSVN.idTicket = idTicket;
+            usuSVN.idUsuario = UsuFirmado.IdEmpleado;
+            usuSVN.URL = txtdireccion.Text;
+            usuSVN.RutaLocal = lblrutaLocal.Content.ToString();
+            bool correcto = Cliente.AgregaRutaSVN(usuSVN, Seguridad.Seguridad.saltkey);
+            if (correcto)
+            {
+                ConnectSVN(usuSVN);
+            }
+        }
+       
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            var dlg = new System.Windows.Forms.FolderBrowserDialog();
+            System.Windows.Forms.DialogResult result = dlg.ShowDialog(this.GetIWin32Window());
+            lblrutaLocal.Content = dlg.SelectedPath;
         }
     }
 }

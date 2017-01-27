@@ -15,11 +15,14 @@ namespace ServicioKSDP
     // NOTE: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione Service1.svc o Service1.svc.cs en el Explorador de soluciones e inicie la depuración.
     public class Service1 : IService1
     {
-        public void AgregarDireccionSNV(int idTicket,int idUsuario, int idSVN,string Ruta, string URL)
+        public bool AgregaRutaSVN(UsuarioSVN usuSVN, string key)
         {
-            TicketCS ticket = new TicketCS();
-            ticket.AgregarURLSVN(idTicket, idUsuario, idSVN, URL, Ruta);
+            if (!Class.Seguridad.keyCorrecta(key))
+                return false;
+            Empelados emp = new Empelados();
+            return  emp.AddlRutas(usuSVN);
         }
+        
         public List<DataRepTicket> Reporte(string Nombre, string Ticket, int Sistema, int idEmpleado, string key)
         {
             List<DataRepTicket> listado;
@@ -194,6 +197,14 @@ namespace ServicioKSDP
                 return Empresas;
             Class.catalogos.Catalogos Cat = new Class.catalogos.Catalogos();
             return Cat.GetAllUsuariosAnexos();
+        }
+        public UsuarioSVN GetRuta(int idTicket, int idUsuario, string key)
+        {
+            UsuarioSVN usu = null;
+            if (!Class.Seguridad.keyCorrecta(key))
+                return usu;
+            Empelados emp = new Empelados();
+            return emp.GetRutaSVN(idUsuario, idTicket);
         }
     }
 }

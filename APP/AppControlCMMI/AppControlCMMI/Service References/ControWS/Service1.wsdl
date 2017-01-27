@@ -115,11 +115,17 @@
   <wsdl:message name="IService1_Reporte_OutputMessage">
     <wsdl:part name="parameters" element="tns:ReporteResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_AgregarDireccionSNV_InputMessage">
-    <wsdl:part name="parameters" element="tns:AgregarDireccionSNV" />
+  <wsdl:message name="IService1_AgregaRutaSVN_InputMessage">
+    <wsdl:part name="parameters" element="tns:AgregaRutaSVN" />
   </wsdl:message>
-  <wsdl:message name="IService1_AgregarDireccionSNV_OutputMessage">
-    <wsdl:part name="parameters" element="tns:AgregarDireccionSNVResponse" />
+  <wsdl:message name="IService1_AgregaRutaSVN_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AgregaRutaSVNResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetRuta_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRuta" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetRuta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRutaResponse" />
   </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="ObtenerUsuarioSVN">
@@ -194,9 +200,13 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Reporte" message="tns:IService1_Reporte_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/ReporteResponse" message="tns:IService1_Reporte_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="AgregarDireccionSNV">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AgregarDireccionSNV" message="tns:IService1_AgregarDireccionSNV_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AgregarDireccionSNVResponse" message="tns:IService1_AgregarDireccionSNV_OutputMessage" />
+    <wsdl:operation name="AgregaRutaSVN">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AgregaRutaSVN" message="tns:IService1_AgregaRutaSVN_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AgregaRutaSVNResponse" message="tns:IService1_AgregaRutaSVN_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRuta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetRuta" message="tns:IService1_GetRuta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetRutaResponse" message="tns:IService1_GetRuta_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -363,8 +373,17 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="AgregarDireccionSNV">
-      <soap:operation soapAction="http://tempuri.org/IService1/AgregarDireccionSNV" style="document" />
+    <wsdl:operation name="AgregaRutaSVN">
+      <soap:operation soapAction="http://tempuri.org/IService1/AgregaRutaSVN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRuta">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetRuta" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

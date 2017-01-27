@@ -4,7 +4,9 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="Contraseña" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RutaLocal" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="URL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="idTicket" type="xs:int" />
       <xs:element minOccurs="0" name="idUsuario" type="xs:int" />
     </xs:sequence>
   </xs:complexType>

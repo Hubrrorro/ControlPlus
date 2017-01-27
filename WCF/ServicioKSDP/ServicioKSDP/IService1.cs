@@ -48,7 +48,9 @@ namespace ServicioKSDP
         [OperationContract]
         List<DataRepTicket> Reporte(string Nombre, string Ticket, int Sistema, int idEmpleado, string key);
         [OperationContract]
-        void AgregarDireccionSNV(int idTicket,int idUsuario, int idSVN,string Ruta, string URL);
+        bool AgregaRutaSVN(UsuarioSVN usuSVN, string key);
+        [OperationContract]
+        UsuarioSVN GetRuta(int idTicket, int idUsuario, string key);
     }
     [DataContract]
     public class UsuarioSVN
@@ -61,6 +63,10 @@ namespace ServicioKSDP
         public string Contraseña { get; set; }
         [DataMember]
         public string URL { get; set; }
+        [DataMember]
+        public string RutaLocal { get; set; }
+        [DataMember]
+        public int idTicket { get; set; }
 
     }
     [DataContract]

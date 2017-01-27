@@ -47,6 +47,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -65,6 +66,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Dialog.cs" />
     <Compile Include="Formas\Configuracion\AltaSVN.xaml.cs">
       <DependentUpon>AltaSVN.xaml</DependentUpon>
     </Compile>
@@ -83,6 +85,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="SVN\CSVN.cs" />
     <Page Include="Formas\Configuracion\AltaSVN.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

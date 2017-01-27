@@ -29,7 +29,13 @@ namespace AppControlCMMI.ControWS {
         private string NombreField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RutaLocalField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string URLField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idTicketField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int idUsuarioField;
@@ -71,6 +77,19 @@ namespace AppControlCMMI.ControWS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RutaLocal {
+            get {
+                return this.RutaLocalField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RutaLocalField, value) != true)) {
+                    this.RutaLocalField = value;
+                    this.RaisePropertyChanged("RutaLocal");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string URL {
             get {
                 return this.URLField;
@@ -79,6 +98,19 @@ namespace AppControlCMMI.ControWS {
                 if ((object.ReferenceEquals(this.URLField, value) != true)) {
                     this.URLField = value;
                     this.RaisePropertyChanged("URL");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int idTicket {
+            get {
+                return this.idTicketField;
+            }
+            set {
+                if ((this.idTicketField.Equals(value) != true)) {
+                    this.idTicketField = value;
+                    this.RaisePropertyChanged("idTicket");
                 }
             }
         }
@@ -985,11 +1017,17 @@ namespace AppControlCMMI.ControWS {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Reporte", ReplyAction="http://tempuri.org/IService1/ReporteResponse")]
         System.Threading.Tasks.Task<AppControlCMMI.ControWS.DataRepTicket[]> ReporteAsync(string Nombre, string Ticket, int Sistema, int idEmpleado, string key);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AgregarDireccionSNV", ReplyAction="http://tempuri.org/IService1/AgregarDireccionSNVResponse")]
-        void AgregarDireccionSNV(int idTicket, int idUsuario, int idSVN, string Ruta, string URL);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AgregaRutaSVN", ReplyAction="http://tempuri.org/IService1/AgregaRutaSVNResponse")]
+        bool AgregaRutaSVN(AppControlCMMI.ControWS.UsuarioSVN usuSVN, string key);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AgregarDireccionSNV", ReplyAction="http://tempuri.org/IService1/AgregarDireccionSNVResponse")]
-        System.Threading.Tasks.Task AgregarDireccionSNVAsync(int idTicket, int idUsuario, int idSVN, string Ruta, string URL);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AgregaRutaSVN", ReplyAction="http://tempuri.org/IService1/AgregaRutaSVNResponse")]
+        System.Threading.Tasks.Task<bool> AgregaRutaSVNAsync(AppControlCMMI.ControWS.UsuarioSVN usuSVN, string key);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetRuta", ReplyAction="http://tempuri.org/IService1/GetRutaResponse")]
+        AppControlCMMI.ControWS.UsuarioSVN GetRuta(int idTicket, int idUsuario, string key);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetRuta", ReplyAction="http://tempuri.org/IService1/GetRutaResponse")]
+        System.Threading.Tasks.Task<AppControlCMMI.ControWS.UsuarioSVN> GetRutaAsync(int idTicket, int idUsuario, string key);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1218,12 +1256,20 @@ namespace AppControlCMMI.ControWS {
             return base.Channel.ReporteAsync(Nombre, Ticket, Sistema, idEmpleado, key);
         }
         
-        public void AgregarDireccionSNV(int idTicket, int idUsuario, int idSVN, string Ruta, string URL) {
-            base.Channel.AgregarDireccionSNV(idTicket, idUsuario, idSVN, Ruta, URL);
+        public bool AgregaRutaSVN(AppControlCMMI.ControWS.UsuarioSVN usuSVN, string key) {
+            return base.Channel.AgregaRutaSVN(usuSVN, key);
         }
         
-        public System.Threading.Tasks.Task AgregarDireccionSNVAsync(int idTicket, int idUsuario, int idSVN, string Ruta, string URL) {
-            return base.Channel.AgregarDireccionSNVAsync(idTicket, idUsuario, idSVN, Ruta, URL);
+        public System.Threading.Tasks.Task<bool> AgregaRutaSVNAsync(AppControlCMMI.ControWS.UsuarioSVN usuSVN, string key) {
+            return base.Channel.AgregaRutaSVNAsync(usuSVN, key);
+        }
+        
+        public AppControlCMMI.ControWS.UsuarioSVN GetRuta(int idTicket, int idUsuario, string key) {
+            return base.Channel.GetRuta(idTicket, idUsuario, key);
+        }
+        
+        public System.Threading.Tasks.Task<AppControlCMMI.ControWS.UsuarioSVN> GetRutaAsync(int idTicket, int idUsuario, string key) {
+            return base.Channel.GetRutaAsync(idTicket, idUsuario, key);
         }
     }
 }

@@ -5,18 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AppControlCMMI.Formas.Configuracion"
         mc:Ignorable="d"
-        Title="SVNTicket" Height="400" Width="500">
+        Title="SVNTicket" Height="400" Width="740">
     <Grid>
         <Grid x:Name="BusquedaGrid" >
-            <GroupBox x:Name="groupBox" Header="Buscar Ticket" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="112" Width="472">
+            <GroupBox x:Name="groupBox" Header="Buscar Ticket" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="112" Width="712">
                 <Grid>
-                    <TextBox x:Name="txtnombre" HorizontalAlignment="Left" Height="23" Margin="169,36,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="151"/>
-                    <TextBox x:Name="txtticket" HorizontalAlignment="Left" Height="23" Margin="8,36,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="151"/>
-                    <ComboBox x:Name="ddlSistema" HorizontalAlignment="Left" Margin="325,36,0,0" VerticalAlignment="Top" Width="129"/>
-                    <Button  x:Name="btnbuscar" HorizontalAlignment="Left" Margin="377,70,0,1" Width="77" Content="Buscar" Click="btnbuscar_Click"/>
+                    <TextBox x:Name="txtnombre" HorizontalAlignment="Left" Height="23" Margin="241,36,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="214"/>
+                    <TextBox x:Name="txtticket" HorizontalAlignment="Left" Height="23" Margin="8,36,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="212"/>
+                    <ComboBox x:Name="ddlSistema" HorizontalAlignment="Left" Margin="472,36,0,0" VerticalAlignment="Top" Width="214"/>
+                    <Button  x:Name="btnbuscar" HorizontalAlignment="Left" Margin="604,70,0,1" Width="77" Content="Buscar" Click="btnbuscar_Click"/>
                 </Grid>
             </GroupBox>
-            <DataGrid x:Name="dgTicket" HorizontalAlignment="Left" Margin="14,131,0,0" VerticalAlignment="Top" Height="191" Width="468" SelectionChanged="dgTicket_SelectionChanged"  >
+            <DataGrid x:Name="dgTicket" HorizontalAlignment="Left" Margin="14,131,0,0" VerticalAlignment="Top" Height="191" Width="708" SelectionChanged="dgTicket_SelectionChanged"  >
                 <DataGrid.Resources>
                     <Style TargetType="DataGridRow">
                         <EventSetter Event="MouseDoubleClick" Handler="Row_DoubleClick"/>
@@ -26,17 +26,19 @@
 
         </Grid>
         <Grid x:Name="AsignaGrid"  Visibility="Hidden">
-            <GroupBox x:Name="groupBox1" Header="Ingresa tu direccion" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="306" Width="472">
+            <GroupBox x:Name="groupBox1" Header="Ingresa tu direccion" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="306" Width="712">
                 <Grid >
                     <Label x:Name="lblticket" Content="Label" HorizontalAlignment="Left" Margin="119,10,0,0" VerticalAlignment="Top" Width="144"/>
                     <Label x:Name="lblnombre" Content="Label" HorizontalAlignment="Left" Margin="119,41,0,0" VerticalAlignment="Top" Width="144"/>
                     <Label x:Name="lblsistema" Content="Label" HorizontalAlignment="Left" Margin="119,72,0,0" VerticalAlignment="Top" Width="144"/>
-                    <TextBox x:Name="txtdireccion" HorizontalAlignment="Left" Height="23" Margin="119,114,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="302"/>
+                    <TextBox x:Name="txtdireccion" HorizontalAlignment="Left" Height="23" Margin="119,114,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="302"/>
                     <Label x:Name="lblid" Content="" HorizontalAlignment="Left" Margin="119,10,0,0" VerticalAlignment="Top" Width="144" Visibility="Hidden"/>
-                    <Button Content="Agrega Direccion" HorizontalAlignment="Left" Margin="332,225,0,0" VerticalAlignment="Top" Width="132" Height="47" Click="Button_Click"/>
+                    <Button Content="Agrega Direccion" HorizontalAlignment="Left" Margin="558,227,0,0" VerticalAlignment="Top" Width="132" Height="47" Click="Button_Click"/>
+                    <Label x:Name="lblrutaLocal" Content="" HorizontalAlignment="Left" Margin="119,155,0,0" VerticalAlignment="Top" Width="571"/>
+                    <Button Content="Buscar" HorizontalAlignment="Left" Margin="119,186,0,0" VerticalAlignment="Top" Width="61" Height="28" Click="Button_Click_1"/>
                 </Grid>
             </GroupBox>
-           
+
         </Grid>
     </Grid>
 </Window>
