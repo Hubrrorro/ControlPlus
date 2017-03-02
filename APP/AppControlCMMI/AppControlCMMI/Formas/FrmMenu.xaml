@@ -20,6 +20,13 @@
                     <MenuItem Header="Ticket">
                         <MenuItem Header="Alta" Click="MenuItem_Click"></MenuItem>
                     </MenuItem>
+                    <MenuItem Header="Asigna Personal">
+                        <MenuItem Header="Solicitud de PPQA" Click="MenuItem_Click_3"></MenuItem>
+                        <MenuItem Header="Asigna" Click="MenuItem_Click_2"></MenuItem>
+                    </MenuItem>
+                    <MenuItem Header="Guia Ajuste">
+                        <MenuItem Name="crearguiaAjuste" Header="Crear Guia Ajuste" Click="crearguiaAjuste_Click"></MenuItem>
+                    </MenuItem>
                 </MenuItem>
             </Menu>
         </Grid>

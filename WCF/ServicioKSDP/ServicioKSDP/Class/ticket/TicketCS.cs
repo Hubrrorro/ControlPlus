@@ -10,6 +10,89 @@ namespace ServicioKSDP.Class.ticket
 {
     public class TicketCS
     {
+        public List<UsuariosInvolucrados> GetInvolucrados(int idTicket)
+        {
+            List<UsuariosInvolucrados> Listado = new List<UsuariosInvolucrados>();
+            Conexion Conex = new Conexion();
+            try
+            {
+                SqlConnection SqlCon = Conex.CreaConex();
+                using (SqlCon)
+                {
+                    string qry = "select Puesto,funciones,Nombre + ' ' + ApellidoPat + ' ' + ApellidoMat nombre,Iniciales from CatTicketEmpleado  ce ";
+                    qry += " inner join TblEmpleado e on ce.idEmpleado = e.idEmpleado ";
+                    qry += " inner join Cat_Puesto p on p.idPuesto = e.idPuesto where IDTicket = @IdTicket;";
+                    using (SqlCommand Comm = new SqlCommand(qry, SqlCon))
+                    {
+                        Comm.Parameters.Add(new SqlParameter("@IdTicket", idTicket));
+                        Comm.CommandType = System.Data.CommandType.Text;
+                        SqlCon.Open();
+                        SqlDataReader reader = Comm.ExecuteReader();
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                UsuariosInvolucrados usu = new UsuariosInvolucrados();
+                                usu.Puesto = reader.GetString(0);
+                                usu.Funciones = reader.GetString(1);
+                                usu.Nombre = reader.GetString(2);
+                                usu.Iniciales = reader.GetString(3);
+                                Listado.Add(usu);
+                            }
+                        }
+                    }
+                }
+
+            }
+            catch
+            {
+
+            }
+            return Listado;
+        }
+        public SolicitudPPQA GetDatos(int idTicket)
+        {
+            SolicitudPPQA Solicitud = new SolicitudPPQA();
+            Conexion Conex = new Conexion();
+            try
+            {
+                SqlConnection SqlCon = Conex.CreaConex();
+                using (SqlCon)
+                {
+                    string qry = "select Identificador, t.Nombre, t.Descripcion, s.Sistema,c.Cliente, emp.Nombre + ' ' + ApellidoPat + ' ' + ApellidoMat Lider from tblTicket t  ";
+                    qry += " inner join CatSistema s on s.idSistema = t.idSistema ";
+                    qry += " inner join CatTicketEmpleado cemp on cemp.IDTicket = t.IDTicket ";
+                    qry += " inner join TblEmpleado emp on emp.idEmpleado = cemp.idEmpleado and emp.idPuesto = 2 ";
+                    qry += " inner join Cat_Cliente c on c.idCliente = s.idCliente where t.IDTicket  =@IdTicket;";
+                    using (SqlCommand Comm = new SqlCommand(qry, SqlCon))
+                    {
+                        Comm.Parameters.Add(new SqlParameter("@IdTicket", idTicket));
+                        Comm.CommandType = System.Data.CommandType.Text;
+                        SqlCon.Open();
+                        SqlDataReader reader = Comm.ExecuteReader();
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                Solicitud.identificador = reader.GetString(0);
+                                Solicitud.nombrepro = reader.GetString(1);
+                                Solicitud.descripcion = reader.GetString(2);
+                                Solicitud.app = reader.GetString(3);
+                                Solicitud.cliente = reader.GetString(4);
+                                Solicitud.Lider = reader.GetString(5);
+                            }
+                        }
+                    }
+                }
+
+            }
+            catch
+            {
+
+            }
+            return Solicitud;
+            
+        }
         public bool ExisteCuentaSVN( int idUsuario)
         {
             bool Existe = false;
@@ -142,6 +225,7 @@ namespace ServicioKSDP.Class.ticket
 
             }
         }
+
         public void AgregaPersonal(int IdUsuario, int IdTicket)
         {
             Conexion Conex = new Conexion();

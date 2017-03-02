@@ -1,0 +1,49 @@
+﻿<Window x:Class="AppControlCMMI.Formas.Inicio.FrmPlanProceso"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppControlCMMI.Formas.Inicio"
+        mc:Ignorable="d"
+        Title="FrmPlanProceso"  Height="400" Width="740" SizeChanged="Window_SizeChanged" >
+    <Grid>
+        <Grid x:Name="BusquedaGrid"   >
+            <GroupBox x:Name="groupBox" Header="Buscar Ticket" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="112" Width="712">
+                <Grid>
+                    <TextBox x:Name="txtnombre" HorizontalAlignment="Left" Height="23" Margin="241,36,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="214"/>
+                    <TextBox x:Name="txtticket" HorizontalAlignment="Left" Height="23" Margin="8,36,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="212"/>
+                    <ComboBox x:Name="ddlSistema" HorizontalAlignment="Left" Margin="472,36,0,0" VerticalAlignment="Top" Width="214"/>
+                    <Button  x:Name="btnbuscar" HorizontalAlignment="Left" Margin="604,70,0,1" Width="77" Content="Buscar" Click="btnbuscar_Click"/>
+                </Grid>
+            </GroupBox>
+            <DataGrid x:Name="dgTicket" HorizontalAlignment="Left"  Margin="14,131,0,0" VerticalAlignment="Top" Height="191" Width="Auto"  >
+                <DataGrid.Resources>
+                    <Style TargetType="DataGridRow">
+                        <EventSetter Event="MouseDoubleClick" Handler="Row_DoubleClick"/>
+                    </Style>
+                </DataGrid.Resources>
+            </DataGrid>
+
+        </Grid>
+        <Grid x:Name="AsignaGrid" Visibility="Hidden" >
+            <Label Name="lblTicket" Visibility="Hidden"></Label>
+            <ComboBox x:Name="cbTemplate" HorizontalAlignment="Left" Margin="98,26,0,0" VerticalAlignment="Top" Width="296"/>
+            <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" AutoGenerateColumns="False" Margin="10,76,0,0" VerticalAlignment="Top" Width="714" Height="241">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding idGuia}" Visibility="Hidden"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Proceso" Binding="{Binding proceso}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Actividad" Binding="{Binding actividad}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Producto de trabajo" Binding="{Binding producto}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Fase" Binding="{Binding fase}"></DataGridTextColumn>
+                    <DataGridComboBoxColumn Header="Tipo Ajuste" SelectedItemBinding="{Binding ajuste}"  ItemsSource="{Binding Ajuste}" >
+                    </DataGridComboBoxColumn>
+                    <DataGridComboBoxColumn Header="Documento de Reemplazo" SelectedItemBinding="{Binding nombre}"  ItemsSource="{Binding Listado}" >
+                    </DataGridComboBoxColumn>
+                    <DataGridTextColumn Header="Justificacion"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+
+        </Grid>
+
+    </Grid>
+</Window>

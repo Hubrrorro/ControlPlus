@@ -29,31 +29,39 @@ namespace AppControlCMMI
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (String.IsNullOrEmpty(txtcontraseña.Password))
+            try
             {
-                MessageBox.Show("Debes ingresar una contraseña","Error",MessageBoxButton.OK,MessageBoxImage.Error);
+                if (String.IsNullOrEmpty(txtcontraseña.Password))
+                {
+                    MessageBox.Show("Debes ingresar una contraseña", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+
+                if (String.IsNullOrEmpty(txtUsuario.Text))
+                {
+                    MessageBox.Show("Debes ingresar tu usuario", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+                ControWS.Service1Client Cliente = new Service1Client();
+                Usuario User = new Usuario();
+                User.usuario = txtUsuario.Text.ToUpper();
+                User.contraseña = txtcontraseña.Password;
+                UsuarioFirmado Firmado = Cliente.Acceso(User, Seguridad.Seguridad.saltkey);
+                if (!Firmado.Activo)
+                {
+                    MessageBox.Show("Usuario o contraseña invalida", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+                Application.Current.Resources["UserFirmado"] = Firmado;
+                FrmMenu frmMenu = new FrmMenu();
+                frmMenu.Show();
+                this.Hide();
+            }
+            catch
+            {
+                MessageBox.Show("Error ne la comunicación", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-            
-            if (String.IsNullOrEmpty(txtUsuario.Text))
-            {
-                MessageBox.Show("Debes ingresar tu usuario", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
-            }
-            ControWS.Service1Client Cliente = new Service1Client();
-            Usuario User = new Usuario();
-            User.usuario = txtUsuario.Text.ToUpper();
-            User.contraseña = txtcontraseña.Password;
-            UsuarioFirmado Firmado = Cliente.Acceso(User, Seguridad.Seguridad.saltkey);
-            if (!Firmado.Activo)
-            {
-                MessageBox.Show("Usuario o contraseña invalida", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
-            }
-            Application.Current.Resources["UserFirmado"] = Firmado;
-            FrmMenu frmMenu = new FrmMenu();
-            frmMenu.Show();
-            this.Hide();
         }
     }
 }

@@ -35,6 +35,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DocX, Version=1.0.0.22, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocX.1.0.0.22\lib\net40\DocX.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="SharpSvn, Version=1.8016.3900.133, Culture=neutral, PublicKeyToken=d729672594885a28, processorArchitecture=x86">
       <HintPath>..\packages\SharpSvn.1.8-x86.1.8016.3900.133\lib\net40\SharpSvn.dll</HintPath>
       <Private>True</Private>
@@ -79,12 +83,22 @@
     <Compile Include="Formas\FrmMenu.xaml.cs">
       <DependentUpon>FrmMenu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Formas\Inicio\FrmAsignaPPQDEV.xaml.cs">
+      <DependentUpon>FrmAsignaPPQDEV.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\Inicio\FrmPlanProceso.xaml.cs">
+      <DependentUpon>FrmPlanProceso.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\Inicio\FrmSolicitudPPQA.xaml.cs">
+      <DependentUpon>FrmSolicitudPPQA.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Seguridad\Seguridad.cs" />
     <Compile Include="Service References\ControWS\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="SVN\CreaEstructura.cs" />
     <Compile Include="SVN\CSVN.cs" />
     <Page Include="Formas\Configuracion\AltaSVN.xaml">
       <SubType>Designer</SubType>
@@ -99,6 +113,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Formas\FrmMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Formas\Inicio\FrmAsignaPPQDEV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Formas\Inicio\FrmPlanProceso.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Formas\Inicio\FrmSolicitudPPQA.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -133,6 +159,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Documentos\KSDP_PPQA_F04_AsignaciónRecursos.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Documentos\KSDP_PP_F05_SolicitudAuditorAseguramientoCalidad.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -145,16 +177,28 @@
     <None Include="Service References\ControWS\AppControlCMMI.ControWS.DataRepTicket.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ControWS\AppControlCMMI.ControWS.Documentos.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ControWS\AppControlCMMI.ControWS.GuiaAjusteRow.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ControWS\AppControlCMMI.ControWS.ListItem.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ControWS\AppControlCMMI.ControWS.Menu.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ControWS\AppControlCMMI.ControWS.SolicitudPPQA.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ControWS\AppControlCMMI.ControWS.Ticket.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ControWS\AppControlCMMI.ControWS.UsuarioFirmado.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ControWS\AppControlCMMI.ControWS.UsuariosInvolucrados.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ControWS\AppControlCMMI.ControWS.UsuarioSVN.datasource">
@@ -168,6 +212,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\ControWS\Service12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ControWS\Service13.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
@@ -193,7 +240,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="NewFolder1\" />
+    <Folder Include="Personal\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

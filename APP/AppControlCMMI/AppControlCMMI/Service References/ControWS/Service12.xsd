@@ -96,4 +96,60 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DataRepTicket" nillable="true" type="tns:DataRepTicket" />
+  <xs:complexType name="SolicitudPPQA">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Lider" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="app" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="identificador" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nombrepro" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SolicitudPPQA" nillable="true" type="tns:SolicitudPPQA" />
+  <xs:complexType name="ArrayOfUsuariosInvolucrados">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UsuariosInvolucrados" nillable="true" type="tns:UsuariosInvolucrados" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUsuariosInvolucrados" nillable="true" type="tns:ArrayOfUsuariosInvolucrados" />
+  <xs:complexType name="UsuariosInvolucrados">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Funciones" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Iniciales" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Puesto" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UsuariosInvolucrados" nillable="true" type="tns:UsuariosInvolucrados" />
+  <xs:complexType name="ArrayOfGuiaAjusteRow">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GuiaAjusteRow" nillable="true" type="tns:GuiaAjusteRow" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGuiaAjusteRow" nillable="true" type="tns:ArrayOfGuiaAjusteRow" />
+  <xs:complexType name="GuiaAjusteRow">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="actividad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="carpeta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="idGuia" type="xs:int" />
+      <xs:element minOccurs="0" name="proceso" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="producto" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GuiaAjusteRow" nillable="true" type="tns:GuiaAjusteRow" />
+  <xs:complexType name="ArrayOfDocumentos">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Documentos" nillable="true" type="tns:Documentos" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDocumentos" nillable="true" type="tns:ArrayOfDocumentos" />
+  <xs:complexType name="Documentos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="idDocumentos" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Documentos" nillable="true" type="tns:Documentos" />
 </xs:schema>

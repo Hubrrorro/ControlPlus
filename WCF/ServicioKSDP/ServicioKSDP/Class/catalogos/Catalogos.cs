@@ -108,6 +108,81 @@ namespace ServicioKSDP.Class.catalogos
         {
             return GetCatalogos("select idParticipante,Participante from TblParticipante;");
         }
+        //public List<ListItem> GetTemplate()
+        //{
+        //    return GetCatalogos();
+        //}
+        public List<Documentos> GetDocumentosbyCliente(int IdTicket)
+        {
+            List<Documentos> Catalogo = new List<Documentos>();
+            Conexion Conex = new Conexion();
+            try
+            {
+                SqlConnection SqlCon = Conex.CreaConex();
+                using (SqlCon)
+                {
+                    using (SqlCommand Comm = new SqlCommand("select id_Documento, Nombre, Codigo from Cat_Documentos where idCliente = (select idCliente from CatSistema where idSistema = ( select idSistema from TblTicket where IDTicket = " + IdTicket.ToString() + ")) and Activo = 1;", SqlCon))
+                    {
+                        Comm.CommandType = System.Data.CommandType.Text;
+                        SqlCon.Open();
+                        SqlDataReader reader = Comm.ExecuteReader();
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                Documentos Fila = new Documentos();
+                                Fila.idDocumentos = reader.GetInt32(0);
+                                Fila.nombre = reader.GetString(1);
+                                Fila.codigo = reader.GetString(2);
+                                Catalogo.Add(Fila);
+                            }
+                        }
+                    }
+                }
 
+            }
+            catch
+            {
+
+            }
+            return Catalogo;
+        }
+        public List<GuiaAjusteRow> GetGuiaAjuste()
+        {
+            List<GuiaAjusteRow> Catalogo = new List<GuiaAjusteRow>();
+            Conexion Conex = new Conexion();
+            try
+            {
+                SqlConnection SqlCon = Conex.CreaConex();
+                using (SqlCon)
+                {
+                    using (SqlCommand Comm = new SqlCommand("select idGuia, Proceso,Actividad,Producto,Carpeta from TblGuiaAjusteConfiguration;", SqlCon))
+                    {
+                        Comm.CommandType = System.Data.CommandType.Text;
+                        SqlCon.Open();
+                        SqlDataReader reader = Comm.ExecuteReader();
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                GuiaAjusteRow Fila = new GuiaAjusteRow();
+                                Fila.idGuia = reader.GetInt32(0);
+                                Fila.proceso = reader.GetString(1);
+                                Fila.actividad = reader.GetString(2);
+                                Fila.producto = reader.GetString(3);
+                                Fila.carpeta = reader.GetString(4);
+                                Catalogo.Add(Fila);
+                            }
+                        }
+                    }
+                }
+
+            }
+            catch
+            {
+
+            }
+            return Catalogo;
+        }
     }
 }

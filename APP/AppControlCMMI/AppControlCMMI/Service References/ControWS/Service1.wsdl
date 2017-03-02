@@ -5,6 +5,7 @@
       <xsd:import schemaLocation="http://localhost:2737/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:2737/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:2737/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ServicioKSDP" />
+      <xsd:import schemaLocation="http://localhost:2737/Service1.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IService1_ObtenerUsuarioSVN_InputMessage">
@@ -127,6 +128,36 @@
   <wsdl:message name="IService1_GetRuta_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetRutaResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_GetSolicitudPPQA_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSolicitudPPQA" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetSolicitudPPQA_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSolicitudPPQAResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AsignaPersonal_InputMessage">
+    <wsdl:part name="parameters" element="tns:AsignaPersonal" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AsignaPersonal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AsignaPersonalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetInvolucrados_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvolucrados" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetInvolucrados_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvolucradosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetGuiaAjuste_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGuiaAjuste" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetGuiaAjuste_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGuiaAjusteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetDocumentosbyCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocumentosbyCliente" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetDocumentosbyCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocumentosbyClienteResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="ObtenerUsuarioSVN">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/ObtenerUsuarioSVN" message="tns:IService1_ObtenerUsuarioSVN_InputMessage" />
@@ -207,6 +238,26 @@
     <wsdl:operation name="GetRuta">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetRuta" message="tns:IService1_GetRuta_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetRutaResponse" message="tns:IService1_GetRuta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSolicitudPPQA">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetSolicitudPPQA" message="tns:IService1_GetSolicitudPPQA_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetSolicitudPPQAResponse" message="tns:IService1_GetSolicitudPPQA_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AsignaPersonal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AsignaPersonal" message="tns:IService1_AsignaPersonal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AsignaPersonalResponse" message="tns:IService1_AsignaPersonal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInvolucrados">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetInvolucrados" message="tns:IService1_GetInvolucrados_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetInvolucradosResponse" message="tns:IService1_GetInvolucrados_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGuiaAjuste">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetGuiaAjuste" message="tns:IService1_GetGuiaAjuste_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetGuiaAjusteResponse" message="tns:IService1_GetGuiaAjuste_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentosbyCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetDocumentosbyCliente" message="tns:IService1_GetDocumentosbyCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDocumentosbyClienteResponse" message="tns:IService1_GetDocumentosbyCliente_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -384,6 +435,51 @@
     </wsdl:operation>
     <wsdl:operation name="GetRuta">
       <soap:operation soapAction="http://tempuri.org/IService1/GetRuta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSolicitudPPQA">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetSolicitudPPQA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AsignaPersonal">
+      <soap:operation soapAction="http://tempuri.org/IService1/AsignaPersonal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInvolucrados">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetInvolucrados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGuiaAjuste">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetGuiaAjuste" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentosbyCliente">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetDocumentosbyCliente" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

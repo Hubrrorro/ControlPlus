@@ -10,3 +10,9 @@ C:\Users\RroRro\Documents\GitHub\ControlPlus\WCF\ServicioKSDP\ServicioKSDP\bin\S
 C:\Users\RroRro\Documents\GitHub\ControlPlus\WCF\ServicioKSDP\ServicioKSDP\obj\Debug\ServicioKSDP.csprojResolveAssemblyReference.cache
 C:\Users\RroRro\Documents\GitHub\ControlPlus\WCF\ServicioKSDP\ServicioKSDP\obj\Debug\ServicioKSDP.dll
 C:\Users\RroRro\Documents\GitHub\ControlPlus\WCF\ServicioKSDP\ServicioKSDP\obj\Debug\ServicioKSDP.pdb
+C:\Users\ejjim\OneDrive\Documentos\GitHub\ControlPlus\WCF\ServicioKSDP\ServicioKSDP\bin\ServicioKSDP.dll.config
+C:\Users\ejjim\OneDrive\Documentos\GitHub\ControlPlus\WCF\ServicioKSDP\ServicioKSDP\bin\ServicioKSDP.dll
+C:\Users\ejjim\OneDrive\Documentos\GitHub\ControlPlus\WCF\ServicioKSDP\ServicioKSDP\bin\ServicioKSDP.pdb
+C:\Users\ejjim\OneDrive\Documentos\GitHub\ControlPlus\WCF\ServicioKSDP\ServicioKSDP\obj\Debug\ServicioKSDP.csprojResolveAssemblyReference.cache
+C:\Users\ejjim\OneDrive\Documentos\GitHub\ControlPlus\WCF\ServicioKSDP\ServicioKSDP\obj\Debug\ServicioKSDP.dll
+C:\Users\ejjim\OneDrive\Documentos\GitHub\ControlPlus\WCF\ServicioKSDP\ServicioKSDP\obj\Debug\ServicioKSDP.pdb

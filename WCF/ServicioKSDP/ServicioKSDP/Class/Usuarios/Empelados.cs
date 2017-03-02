@@ -9,6 +9,62 @@ namespace ServicioKSDP.Class.Usuarios
 {
     public class Empelados
     {
+        public void BorraPersonal(int idTicket)
+        {
+
+            Conexion Conex = new Conexion();
+            try
+            {
+                SqlConnection SqlCon = Conex.CreaConex();
+                using (SqlCon)
+                {
+                    string qry = "delete from CatTicketEmpleado where idTicket = @idTicket and idEmpleado not in (select idEmpleado from TblEmpleado where idPuesto in (1,2,3,4))";
+                    using (SqlCommand Comm = new SqlCommand(qry, SqlCon))
+                    {
+                        Comm.Parameters.Add(new SqlParameter("@idTicket", idTicket));
+                        Comm.CommandType = System.Data.CommandType.Text;
+                        SqlCon.Open();
+                        Comm.ExecuteNonQuery();
+                    }
+                }
+
+            }
+            catch
+            {
+
+            }
+
+        }
+        public bool AsignaTicketUsuario(int Ticket, List<int> Empleados)
+        {
+            bool IsCorrecto = true;
+            Conexion Conex = new Conexion();
+            try
+            {
+                foreach (int idEmpleado in Empleados)
+                {
+                    SqlConnection SqlCon = Conex.CreaConex();
+                    using (SqlCon)
+                    {
+                        using (SqlCommand Comm = new SqlCommand("insert into CatTicketEmpleado(idEmpleado, IDTicket) values(@idUsuario, @idTicket)", SqlCon))
+                        {
+                            Comm.Parameters.Add(new SqlParameter("@idTicket", Ticket));
+                            Comm.Parameters.Add(new SqlParameter("@idUsuario", idEmpleado));
+                            Comm.CommandType = System.Data.CommandType.Text;
+                            SqlCon.Open();
+                            Comm.ExecuteNonQuery();
+                        }
+
+                    }
+                }
+            }
+            catch
+            {
+                IsCorrecto= false;
+            }
+            return IsCorrecto;
+
+        }
         public UsuarioSVN GetRutaSVN(int idUsuario, int idTicket)
         {
             Conexion Conex = new Conexion();

@@ -1,4 +1,5 @@
 ﻿using ServicioKSDP.BD;
+using ServicioKSDP.Class.catalogos;
 using ServicioKSDP.Class.ticket;
 using ServicioKSDP.Class.Usuarios;
 using System;
@@ -15,6 +16,30 @@ namespace ServicioKSDP
     // NOTE: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione Service1.svc o Service1.svc.cs en el Explorador de soluciones e inicie la depuración.
     public class Service1 : IService1
     {
+        public List<UsuariosInvolucrados> GetInvolucrados(int idTicket, string key)
+        {
+            List<UsuariosInvolucrados> Listado = null;
+            if (!Class.Seguridad.keyCorrecta(key))
+                return Listado;
+            TicketCS cTicket = new TicketCS();
+            return cTicket.GetInvolucrados(idTicket);
+        }
+        public SolicitudPPQA GetSolicitudPPQA(int idTicket, string key)
+        {
+            SolicitudPPQA Solicitud= null;
+            if (!Class.Seguridad.keyCorrecta(key))
+                return Solicitud;
+            TicketCS cTicket = new TicketCS();
+            return cTicket.GetDatos(idTicket);
+        }
+        public bool AsignaPersonal(int idTicket, List<int> Personal, string key)
+        {
+            if (!Class.Seguridad.keyCorrecta(key))
+                return false;
+            Empelados Emp = new Empelados();
+            Emp.BorraPersonal(idTicket);
+            return  Emp.AsignaTicketUsuario(idTicket, Personal);
+        }
         public bool AgregaRutaSVN(UsuarioSVN usuSVN, string key)
         {
             if (!Class.Seguridad.keyCorrecta(key))
@@ -206,5 +231,29 @@ namespace ServicioKSDP
             Empelados emp = new Empelados();
             return emp.GetRutaSVN(idUsuario, idTicket);
         }
+        public List<GuiaAjusteRow> GetGuiaAjuste(string key)
+        {
+            List<GuiaAjusteRow> Listado = null;
+            if (!Class.Seguridad.keyCorrecta(key))
+                return Listado;
+            Catalogos cat = new Catalogos();
+            return cat.GetGuiaAjuste();
+        }
+        public List<Documentos> GetDocumentosbyCliente(int idTicket, string key)
+        {
+            List<Documentos> Listado = null;
+            if (!Class.Seguridad.keyCorrecta(key))
+                return Listado;
+            Catalogos cat = new Catalogos();
+            return cat.GetDocumentosbyCliente(idTicket);
+        }
+        //public List<ListItem> GetTemplatePlanProceso(string key)
+        //{
+        //    List<ListItem> Listado = null;
+        //    if (!Class.Seguridad.keyCorrecta(key))
+        //        return Listado;
+        //    Catalogos cat = new Catalogos();
+        //    return cat.(idTicket);
+        //}
     }
 }

@@ -51,6 +51,70 @@ namespace ServicioKSDP
         bool AgregaRutaSVN(UsuarioSVN usuSVN, string key);
         [OperationContract]
         UsuarioSVN GetRuta(int idTicket, int idUsuario, string key);
+        [OperationContract]
+        SolicitudPPQA GetSolicitudPPQA(int idTicket, string key);
+        [OperationContract]
+        bool AsignaPersonal(int idTicket, List<int> Personal, string key);
+        [OperationContract]
+        List<UsuariosInvolucrados> GetInvolucrados(int idTicket, string key);
+        [OperationContract]
+        List<GuiaAjusteRow> GetGuiaAjuste(string key);
+        [OperationContract]
+        List<Documentos> GetDocumentosbyCliente(int idTicket, string key);
+        //[OperationContract]
+        //List<ListItem> GetTemplatePlanProceso(string key);
+    }
+    [DataContract]
+    public class Documentos {
+        [DataMember]
+        public int idDocumentos { get; set; }
+        [DataMember]
+        public string nombre { get; set; }
+        [DataMember]
+        public string codigo { get; set; }
+    }
+    [DataContract]
+    public class GuiaAjusteRow
+    {
+        [DataMember]
+        public int idGuia { get; set; }
+        [DataMember]
+        public string proceso { get; set; }
+        [DataMember]
+        public string actividad { get; set; }
+        [DataMember]
+        public string producto { get; set; }
+        [DataMember]
+        public string carpeta { get; set; }
+    
+    }
+    [DataContract]
+    public class UsuariosInvolucrados
+    {
+        [DataMember]
+        public string Puesto;
+        [DataMember]
+        public string Funciones;
+        [DataMember]
+        public string Nombre;
+        [DataMember]
+        public string Iniciales;
+    }
+    [DataContract]
+    public class SolicitudPPQA
+    {
+        [DataMember]
+        public string cliente { get; set; }
+        [DataMember]
+        public string app { get; set; }
+        [DataMember]
+        public string identificador { get; set; }
+        [DataMember]
+        public string nombrepro { get; set; }
+        [DataMember]
+        public string descripcion { get; set; }
+        [DataMember]
+        public string Lider { get; set; }
     }
     [DataContract]
     public class UsuarioSVN
@@ -177,4 +241,5 @@ namespace ServicioKSDP
         public string Correo { get; set; }
 
     }
+
 }

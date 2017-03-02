@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:2737/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ServicioKSDP" />
+  <xs:import schemaLocation="http://localhost:2737/Service1.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
   <xs:element name="ObtenerUsuarioSVN">
     <xs:complexType>
       <xs:sequence>
@@ -294,6 +295,81 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/ServicioKSDP" minOccurs="0" name="GetRutaResult" nillable="true" type="q22:UsuarioSVN" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSolicitudPPQA">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idTicket" type="xs:int" />
+        <xs:element minOccurs="0" name="key" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSolicitudPPQAResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/ServicioKSDP" minOccurs="0" name="GetSolicitudPPQAResult" nillable="true" type="q23:SolicitudPPQA" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AsignaPersonal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idTicket" type="xs:int" />
+        <xs:element xmlns:q24="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Personal" nillable="true" type="q24:ArrayOfint" />
+        <xs:element minOccurs="0" name="key" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AsignaPersonalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AsignaPersonalResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInvolucrados">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idTicket" type="xs:int" />
+        <xs:element minOccurs="0" name="key" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInvolucradosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/ServicioKSDP" minOccurs="0" name="GetInvolucradosResult" nillable="true" type="q25:ArrayOfUsuariosInvolucrados" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGuiaAjuste">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="key" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGuiaAjusteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/ServicioKSDP" minOccurs="0" name="GetGuiaAjusteResult" nillable="true" type="q26:ArrayOfGuiaAjusteRow" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentosbyCliente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idTicket" type="xs:int" />
+        <xs:element minOccurs="0" name="key" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentosbyClienteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/ServicioKSDP" minOccurs="0" name="GetDocumentosbyClienteResult" nillable="true" type="q27:ArrayOfDocumentos" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

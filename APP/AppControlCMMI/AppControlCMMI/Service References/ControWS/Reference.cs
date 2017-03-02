@@ -904,6 +904,410 @@ namespace AppControlCMMI.ControWS {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SolicitudPPQA", Namespace="http://schemas.datacontract.org/2004/07/ServicioKSDP")]
+    [System.SerializableAttribute()]
+    public partial class SolicitudPPQA : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LiderField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string appField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string clienteField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string descripcionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string identificadorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string nombreproField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Lider {
+            get {
+                return this.LiderField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LiderField, value) != true)) {
+                    this.LiderField = value;
+                    this.RaisePropertyChanged("Lider");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string app {
+            get {
+                return this.appField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.appField, value) != true)) {
+                    this.appField = value;
+                    this.RaisePropertyChanged("app");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string cliente {
+            get {
+                return this.clienteField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.clienteField, value) != true)) {
+                    this.clienteField = value;
+                    this.RaisePropertyChanged("cliente");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string descripcion {
+            get {
+                return this.descripcionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.descripcionField, value) != true)) {
+                    this.descripcionField = value;
+                    this.RaisePropertyChanged("descripcion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string identificador {
+            get {
+                return this.identificadorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.identificadorField, value) != true)) {
+                    this.identificadorField = value;
+                    this.RaisePropertyChanged("identificador");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string nombrepro {
+            get {
+                return this.nombreproField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.nombreproField, value) != true)) {
+                    this.nombreproField = value;
+                    this.RaisePropertyChanged("nombrepro");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="UsuariosInvolucrados", Namespace="http://schemas.datacontract.org/2004/07/ServicioKSDP")]
+    [System.SerializableAttribute()]
+    public partial class UsuariosInvolucrados : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FuncionesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string InicialesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NombreField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PuestoField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Funciones {
+            get {
+                return this.FuncionesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FuncionesField, value) != true)) {
+                    this.FuncionesField = value;
+                    this.RaisePropertyChanged("Funciones");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Iniciales {
+            get {
+                return this.InicialesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InicialesField, value) != true)) {
+                    this.InicialesField = value;
+                    this.RaisePropertyChanged("Iniciales");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Nombre {
+            get {
+                return this.NombreField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NombreField, value) != true)) {
+                    this.NombreField = value;
+                    this.RaisePropertyChanged("Nombre");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Puesto {
+            get {
+                return this.PuestoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PuestoField, value) != true)) {
+                    this.PuestoField = value;
+                    this.RaisePropertyChanged("Puesto");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="GuiaAjusteRow", Namespace="http://schemas.datacontract.org/2004/07/ServicioKSDP")]
+    [System.SerializableAttribute()]
+    public partial class GuiaAjusteRow : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string actividadField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string carpetaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idGuiaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string procesoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string productoField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string actividad {
+            get {
+                return this.actividadField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.actividadField, value) != true)) {
+                    this.actividadField = value;
+                    this.RaisePropertyChanged("actividad");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string carpeta {
+            get {
+                return this.carpetaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.carpetaField, value) != true)) {
+                    this.carpetaField = value;
+                    this.RaisePropertyChanged("carpeta");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int idGuia {
+            get {
+                return this.idGuiaField;
+            }
+            set {
+                if ((this.idGuiaField.Equals(value) != true)) {
+                    this.idGuiaField = value;
+                    this.RaisePropertyChanged("idGuia");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string proceso {
+            get {
+                return this.procesoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.procesoField, value) != true)) {
+                    this.procesoField = value;
+                    this.RaisePropertyChanged("proceso");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string producto {
+            get {
+                return this.productoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.productoField, value) != true)) {
+                    this.productoField = value;
+                    this.RaisePropertyChanged("producto");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Documentos", Namespace="http://schemas.datacontract.org/2004/07/ServicioKSDP")]
+    [System.SerializableAttribute()]
+    public partial class Documentos : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string codigoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idDocumentosField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string nombreField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string codigo {
+            get {
+                return this.codigoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.codigoField, value) != true)) {
+                    this.codigoField = value;
+                    this.RaisePropertyChanged("codigo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int idDocumentos {
+            get {
+                return this.idDocumentosField;
+            }
+            set {
+                if ((this.idDocumentosField.Equals(value) != true)) {
+                    this.idDocumentosField = value;
+                    this.RaisePropertyChanged("idDocumentos");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string nombre {
+            get {
+                return this.nombreField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.nombreField, value) != true)) {
+                    this.nombreField = value;
+                    this.RaisePropertyChanged("nombre");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ControWS.IService1")]
     public interface IService1 {
@@ -1028,6 +1432,36 @@ namespace AppControlCMMI.ControWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetRuta", ReplyAction="http://tempuri.org/IService1/GetRutaResponse")]
         System.Threading.Tasks.Task<AppControlCMMI.ControWS.UsuarioSVN> GetRutaAsync(int idTicket, int idUsuario, string key);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetSolicitudPPQA", ReplyAction="http://tempuri.org/IService1/GetSolicitudPPQAResponse")]
+        AppControlCMMI.ControWS.SolicitudPPQA GetSolicitudPPQA(int idTicket, string key);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetSolicitudPPQA", ReplyAction="http://tempuri.org/IService1/GetSolicitudPPQAResponse")]
+        System.Threading.Tasks.Task<AppControlCMMI.ControWS.SolicitudPPQA> GetSolicitudPPQAAsync(int idTicket, string key);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AsignaPersonal", ReplyAction="http://tempuri.org/IService1/AsignaPersonalResponse")]
+        bool AsignaPersonal(int idTicket, int[] Personal, string key);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AsignaPersonal", ReplyAction="http://tempuri.org/IService1/AsignaPersonalResponse")]
+        System.Threading.Tasks.Task<bool> AsignaPersonalAsync(int idTicket, int[] Personal, string key);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetInvolucrados", ReplyAction="http://tempuri.org/IService1/GetInvolucradosResponse")]
+        AppControlCMMI.ControWS.UsuariosInvolucrados[] GetInvolucrados(int idTicket, string key);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetInvolucrados", ReplyAction="http://tempuri.org/IService1/GetInvolucradosResponse")]
+        System.Threading.Tasks.Task<AppControlCMMI.ControWS.UsuariosInvolucrados[]> GetInvolucradosAsync(int idTicket, string key);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetGuiaAjuste", ReplyAction="http://tempuri.org/IService1/GetGuiaAjusteResponse")]
+        AppControlCMMI.ControWS.GuiaAjusteRow[] GetGuiaAjuste(string key);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetGuiaAjuste", ReplyAction="http://tempuri.org/IService1/GetGuiaAjusteResponse")]
+        System.Threading.Tasks.Task<AppControlCMMI.ControWS.GuiaAjusteRow[]> GetGuiaAjusteAsync(string key);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDocumentosbyCliente", ReplyAction="http://tempuri.org/IService1/GetDocumentosbyClienteResponse")]
+        AppControlCMMI.ControWS.Documentos[] GetDocumentosbyCliente(int idTicket, string key);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDocumentosbyCliente", ReplyAction="http://tempuri.org/IService1/GetDocumentosbyClienteResponse")]
+        System.Threading.Tasks.Task<AppControlCMMI.ControWS.Documentos[]> GetDocumentosbyClienteAsync(int idTicket, string key);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1270,6 +1704,46 @@ namespace AppControlCMMI.ControWS {
         
         public System.Threading.Tasks.Task<AppControlCMMI.ControWS.UsuarioSVN> GetRutaAsync(int idTicket, int idUsuario, string key) {
             return base.Channel.GetRutaAsync(idTicket, idUsuario, key);
+        }
+        
+        public AppControlCMMI.ControWS.SolicitudPPQA GetSolicitudPPQA(int idTicket, string key) {
+            return base.Channel.GetSolicitudPPQA(idTicket, key);
+        }
+        
+        public System.Threading.Tasks.Task<AppControlCMMI.ControWS.SolicitudPPQA> GetSolicitudPPQAAsync(int idTicket, string key) {
+            return base.Channel.GetSolicitudPPQAAsync(idTicket, key);
+        }
+        
+        public bool AsignaPersonal(int idTicket, int[] Personal, string key) {
+            return base.Channel.AsignaPersonal(idTicket, Personal, key);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AsignaPersonalAsync(int idTicket, int[] Personal, string key) {
+            return base.Channel.AsignaPersonalAsync(idTicket, Personal, key);
+        }
+        
+        public AppControlCMMI.ControWS.UsuariosInvolucrados[] GetInvolucrados(int idTicket, string key) {
+            return base.Channel.GetInvolucrados(idTicket, key);
+        }
+        
+        public System.Threading.Tasks.Task<AppControlCMMI.ControWS.UsuariosInvolucrados[]> GetInvolucradosAsync(int idTicket, string key) {
+            return base.Channel.GetInvolucradosAsync(idTicket, key);
+        }
+        
+        public AppControlCMMI.ControWS.GuiaAjusteRow[] GetGuiaAjuste(string key) {
+            return base.Channel.GetGuiaAjuste(key);
+        }
+        
+        public System.Threading.Tasks.Task<AppControlCMMI.ControWS.GuiaAjusteRow[]> GetGuiaAjusteAsync(string key) {
+            return base.Channel.GetGuiaAjusteAsync(key);
+        }
+        
+        public AppControlCMMI.ControWS.Documentos[] GetDocumentosbyCliente(int idTicket, string key) {
+            return base.Channel.GetDocumentosbyCliente(idTicket, key);
+        }
+        
+        public System.Threading.Tasks.Task<AppControlCMMI.ControWS.Documentos[]> GetDocumentosbyClienteAsync(int idTicket, string key) {
+            return base.Channel.GetDocumentosbyClienteAsync(idTicket, key);
         }
     }
 }

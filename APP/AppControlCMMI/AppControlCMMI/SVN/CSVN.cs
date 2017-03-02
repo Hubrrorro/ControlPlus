@@ -10,6 +10,40 @@ namespace AppControlCMMI.SVN
 {
     class CSVN
     {
+        public bool commit(UsuarioSVN usuSVN, string Mensaje)
+        {
+            bool EsCorrecto = true;
+            SvnUpdateResult result;
+            SvnCommitArgs ca = new SvnCommitArgs();
+            using (SvnClient client = new SvnClient())
+            {
+                try
+                {
+                    client.Authentication.ForceCredentials(usuSVN.Nombre, usuSVN.Contraseña);
+                    //SvnUriTarget is a wrapper class for SVN repository URIs
+                    SvnUriTarget target = new SvnUriTarget(usuSVN.URL);
+                    client.Authentication.SslServerTrustHandlers += new EventHandler<SharpSvn.Security.SvnSslServerTrustEventArgs>(Authentication_SslServerTrustHandlers);
+
+                    // Checkout the code to the specified directory
+                    client.CheckOut(target, usuSVN.RutaLocal);
+
+                    // Update the specified working copy path to the head revision
+                    //client.Update("c:\\sharpsvn");
+                    
+                    client.Update(usuSVN.RutaLocal, out result);
+
+                    
+                    
+                    ca.LogMessage = "Mensaje";
+                    client.Commit(usuSVN.RutaLocal, ca);
+                }
+                catch
+                {
+                    EsCorrecto = false;
+                }
+                return EsCorrecto;
+            }
+        }
         public bool checkedOut(UsuarioSVN usuSVN)
         {
             SvnUpdateResult result;

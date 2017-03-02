@@ -51,5 +51,23 @@ namespace AppControlCMMI.Formas
             Configuracion.SVNTicket svnTic = new Configuracion.SVNTicket();
             svnTic.ShowDialog();
         }
+
+        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
+        {
+            Inicio.FrmAsignaPPQDEV asignappqa = new Inicio.FrmAsignaPPQDEV();
+            asignappqa.ShowDialog();
+        }
+
+        private void MenuItem_Click_3(object sender, RoutedEventArgs e)
+        {
+            Inicio.FrmSolicitudPPQA solppqa = new Inicio.FrmSolicitudPPQA();
+            solppqa.ShowDialog();
+        }
+
+        private void crearguiaAjuste_Click(object sender, RoutedEventArgs e)
+        {
+            Inicio.FrmPlanProceso frmPlanProceso = new Inicio.FrmPlanProceso();
+            frmPlanProceso.Show();
+        }
     }
 }

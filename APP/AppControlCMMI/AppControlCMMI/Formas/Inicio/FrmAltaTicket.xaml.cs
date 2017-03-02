@@ -74,8 +74,8 @@ namespace AppControlCMMI.Formas.Inicio
                 MessageBox.Show("Falta llenar campos", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-            
-            Ticket _Ticket = new Ticket();
+
+            AppControlCMMI.ControWS.Ticket _Ticket = new AppControlCMMI.ControWS.Ticket();
             _Ticket.idEmpresa = int.Parse(ddlEmpresa.SelectedValue.ToString());
             _Ticket.Descripcion = txtdescripcion.Text;
             _Ticket.idEnlace = int.Parse(ddlEnlace.SelectedValue.ToString());
